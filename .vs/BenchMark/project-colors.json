@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "01d6f9d3-7d86-45e0-a14f-0ec7615567c2": {
+      "ProjectGuid": "01d6f9d3-7d86-45e0-a14f-0ec7615567c2",
+      "DisplayName": "BenchMark",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
