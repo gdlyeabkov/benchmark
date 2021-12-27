@@ -49,7 +49,7 @@ namespace BenchMark
                 temperature = (temperature - 2732) / 10.0;
             }
             cpuTemp.Text = temperature.ToString() + " ℃";
-
+            cpuTempChart.Value = ((int)(temperature)); 
         }
 
         private void GetCPUVoltage()
@@ -63,6 +63,7 @@ namespace BenchMark
                 voltage = item.Properties["CurrentVoltage"].Value.ToString();
             }
             cpuVolt.Text = voltage.ToString() + " mV";
+            cpuVoltChart.Value = Int32.Parse(voltage);
         }
 
         private void GetRAMFrequency()
@@ -72,6 +73,7 @@ namespace BenchMark
             foreach (ManagementObject ram in search.Get())
             {
                 ramFreq.Text = Convert.ToDouble(ram.GetPropertyValue("MinVoltage")) + "MHz";
+                ramFreqChart.Value = ((int)(Convert.ToDouble(ram.GetPropertyValue("MinVoltage"))));
             }
         }
 
@@ -82,7 +84,30 @@ namespace BenchMark
             foreach (ManagementObject gpu in search.Get())
             {
                 gpuFreq.Text = Convert.ToDouble(gpu.GetPropertyValue("CurrentRefreshRate")) + "MHz";
+                gpuFreqChart.Value = ((int)(Convert.ToDouble(gpu.GetPropertyValue("CurrentRefreshRate"))));
             }
+        }
+
+        private void ToggleScreenAppHandler(object sender, MouseButtonEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            else if (this.WindowState == WindowState.Normal)
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void ToggleAppHandler(object sender, MouseButtonEventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void CloseAppHandler(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
         }
 
     }

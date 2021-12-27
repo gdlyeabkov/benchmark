@@ -5,35 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BenchMark"
         mc:Ignorable="d"
-        Title="Тестирование производительности" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStyle="None" Title="Тестирование производительности" Height="450" Width="800">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Top" Height="50" Background="Red">
-            <TextBlock Text="MSI" FontSize="36" HorizontalAlignment="Center" />
+        <StackPanel DockPanel.Dock="Top" Height="50" Background="DarkSlateGray">
+            <StackPanel Orientation="Horizontal" Margin="650, 0, 0, 0">
+                <materialDesign:PackIcon Kind="MicrosoftWindows" Margin="5, 0" Foreground="LightGray" MouseUp="ToggleScreenAppHandler" />
+                <materialDesign:PackIcon Kind="Minus" Margin="5, 0" Foreground="LightGray" MouseUp="ToggleAppHandler" />
+                <materialDesign:PackIcon Kind="Close" Margin="5, 0" Foreground="LightGray" MouseUp="CloseAppHandler" />
+            </StackPanel>
+            <TextBlock Text="MSI" Foreground="DarkGray" FontSize="30" HorizontalAlignment="Center" />
         </StackPanel>
-        <StackPanel DockPanel.Dock="Bottom" Height="50" Background="Yellow">
-
+        <StackPanel DockPanel.Dock="Bottom" Height="50" Orientation="Horizontal" Background="Gray">
+            <materialDesign:PackIcon Kind="Refresh" Foreground="LightGray" Margin="350, 10, 10, 10" Width="24" Height="24" />
+            <materialDesign:PackIcon Kind="ContentSave" Foreground="LightGray" Margin="10, 10, 10, 10" Width="24" Height="24" />
+            <materialDesign:PackIcon Kind="Check" Foreground="LightGray" Margin="10, 10, 150, 10" Width="24" Height="24" />
         </StackPanel>
-        <StackPanel Width="75" DockPanel.Dock="Left" Background="Blue">
-
+        <StackPanel Width="75" DockPanel.Dock="Left" Background="SlateGray">
+            <materialDesign:PackIcon Kind="Rollupjs" HorizontalAlignment="Center" Foreground="LightGray" Width="24" Height="24" Margin="0, 10" />
+            <materialDesign:PackIcon Kind="Circle" HorizontalAlignment="Center" Foreground="LightGray" Width="24" Height="24" Margin="0, 10" />
+            <materialDesign:PackIcon Kind="InfoOutline" HorizontalAlignment="Center" Foreground="LightGray" Width="24" Height="24" Margin="0, 10" />
+            <TextBlock HorizontalAlignment="Center" Foreground="LightGray" Width="24" Height="24" Margin="0, 10" />
+            <materialDesign:PackIcon Kind="Settings" HorizontalAlignment="Center" Foreground="LightGray" Width="24" Height="24" Margin="0, 10" />
+            <materialDesign:PackIcon Kind="Monitor" HorizontalAlignment="Center" Foreground="LightGray" Width="24" Height="24" Margin="0, 10" />
         </StackPanel>
-        <StackPanel DockPanel.Dock="Right"  Width="75" Background="Green">
-
+        <StackPanel DockPanel.Dock="Right"  Width="75" Background="SlateGray">
+            <materialDesign:PackIcon Kind="Lock" HorizontalAlignment="Center" Foreground="LightGray" Width="24" Height="24" Margin="0, 10" />
+            <TextBlock HorizontalAlignment="Center" Foreground="LightGray" Text="1" Width="24" Height="24" FontSize="20" FontFamily="Segoe Script" Margin="0, 10" />
+            <TextBlock HorizontalAlignment="Center" Foreground="LightGray" Text="2" Width="24" Height="24" FontSize="20" FontFamily="Segoe Script" Margin="0, 10" />
+            <TextBlock HorizontalAlignment="Center" Foreground="LightGray" Text="3" Width="24" Height="24" FontSize="20" FontFamily="Segoe Script" Margin="0, 10" />
+            <TextBlock HorizontalAlignment="Center" Foreground="LightGray" Text="4" Width="24" Height="24" FontSize="20" FontFamily="Segoe Script" Margin="0, 10" />
+            <TextBlock HorizontalAlignment="Center" Foreground="LightGray" Text="5" Width="24" Height="24" FontSize="20" FontFamily="Segoe Script" Margin="0, 10" />
         </StackPanel>
         <StackPanel Background="Black">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 25, 0, 10">
                 <TextBlock FontSize="18" Foreground="White" Text="GPU     " />
+                <ProgressBar x:Name="gpuFreqChart" Width="250" Margin="0, 0, 20, 0" Value="50" Foreground="Blue" Maximum="100" />
                 <TextBlock x:Name="gpuFreq" FontSize="18" Foreground="White" Text="0 MHz" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 25, 0, 10">
                 <TextBlock FontSize="18" Foreground="White" Text="MEM     " />
+                <ProgressBar x:Name="ramFreqChart" Width="250" Margin="0, 0, 20, 0" Value="50" Foreground="Blue" Maximum="100" />
                 <TextBlock x:Name="ramFreq" FontSize="18" Foreground="White" Text="0 MHz" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 25, 0, 10">
                 <TextBlock FontSize="18" Foreground="White" Text="VOLT     " />
+                <ProgressBar x:Name="cpuVoltChart" Width="250" Margin="0, 0, 20, 0" Value="50" Foreground="Blue" Maximum="100" />
                 <TextBlock x:Name="cpuVolt" FontSize="18" Foreground="White" Text="0 mV" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 10, 0, 25">
                 <TextBlock FontSize="18" Foreground="White" Text="CPU     " />
+                <ProgressBar x:Name="cpuTempChart" Width="250" Margin="0, 0, 20, 0" Value="50" Foreground="Blue" Maximum="100" />
                 <TextBlock x:Name="cpuTemp" FontSize="18" Foreground="White" Text="0 ℃" />
             </StackPanel>
         </StackPanel>

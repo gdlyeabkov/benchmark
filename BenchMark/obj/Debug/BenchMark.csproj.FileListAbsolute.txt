@@ -18,3 +18,8 @@ C:\wpf_projects\BenchMark\BenchMark\bin\Debug\OpenHardwareMonitorLib.dll
 C:\wpf_projects\BenchMark\BenchMark\obj\Debug\BenchMark.csproj.CopyComplete
 C:\wpf_projects\BenchMark\BenchMark\bin\Debug\System.CodeDom.dll
 C:\wpf_projects\BenchMark\BenchMark\bin\Debug\System.CodeDom.xml
+C:\wpf_projects\BenchMark\BenchMark\bin\Debug\MaterialDesignColors.dll
+C:\wpf_projects\BenchMark\BenchMark\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\wpf_projects\BenchMark\BenchMark\bin\Debug\MaterialDesignColors.pdb
+C:\wpf_projects\BenchMark\BenchMark\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\wpf_projects\BenchMark\BenchMark\bin\Debug\MaterialDesignThemes.Wpf.xml
